@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Pq0-V7-eua">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="GOTHAM-ROUNDED-LIGHT.ttf">
+            <string>GothamRounded-Light</string>
+            <string>GothamRounded-Light</string>
+            <string>GothamRounded-Light</string>
+            <string>GothamRounded-Light</string>
+            <string>GothamRounded-Light</string>
+            <string>GothamRounded-Light</string>
+            <string>GothamRounded-Light</string>
+            <string>GothamRounded-Light</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Trips-->
+        <scene sceneID="gY5-PH-ZZf">
+            <objects>
+                <viewController storyboardIdentifier="TripHomeVC" id="Gas-XL-XwI" customClass="TripHomeVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O4G-gZ-yn9"/>
+                        <viewControllerLayoutGuide type="bottom" id="OY8-dn-nJm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aNX-KV-F4z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WUn-YI-2Hd">
+                                <rect key="frame" x="0.0" y="-44" width="320" height="568"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Gas-XL-XwI" id="S0O-HV-TUb"/>
+                                    <outlet property="delegate" destination="Gas-XL-XwI" id="ZDk-lr-aNZ"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No trips added yet..!!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dv-Cm-l2a">
+                                <rect key="frame" x="5" y="167" width="310" height="21"/>
+                                <fontDescription key="fontDescription" name="GothamRounded-Light" family="Gotham Rounded" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7KR-4i-A2f">
+                                <rect key="frame" x="103" y="201" width="92" height="30"/>
+                                <state key="normal" title="Sync Now">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="syncAction:" destination="Gas-XL-XwI" eventType="touchUpInside" id="I0J-kY-H8h"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WUn-YI-2Hd" secondAttribute="trailing" id="Vuh-Gs-nhZ"/>
+                            <constraint firstItem="WUn-YI-2Hd" firstAttribute="leading" secondItem="aNX-KV-F4z" secondAttribute="leading" id="Z8v-h1-01F"/>
+                            <constraint firstItem="WUn-YI-2Hd" firstAttribute="top" secondItem="O4G-gZ-yn9" secondAttribute="bottom" constant="-44" id="jIz-jr-iI9"/>
+                            <constraint firstItem="OY8-dn-nJm" firstAttribute="top" secondItem="WUn-YI-2Hd" secondAttribute="bottom" id="oue-9Q-0ms"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <navigationItem key="navigationItem" title="Trips" id="v3a-aK-T1x">
+                        <barButtonItem key="backBarButtonItem" title=" " id="J5X-md-sWJ"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="1VP-AI-uWW">
+                            <connections>
+                                <action selector="addTripAction:" destination="Gas-XL-XwI" id="Xyt-kH-aQe"/>
+                                <segue destination="Rjt-7c-f4b" kind="push" identifier="addTripIdentifier" id="IAR-Vy-G6X"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="btnSync" destination="7KR-4i-A2f" id="mPF-Be-BHl"/>
+                        <outlet property="lblMessage" destination="2dv-Cm-l2a" id="LC7-Qp-QHQ"/>
+                        <outlet property="tableViewTrips" destination="WUn-YI-2Hd" id="LhA-mh-rSh"/>
+                        <segue destination="bMa-OS-5yt" kind="push" identifier="summaryIdentifier" id="mhW-vj-vYB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3vZ-ac-5ng" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1438" y="-76"/>
+        </scene>
+        <!--Trip SummaryVC-->
+        <scene sceneID="9AM-BD-zgP">
+            <objects>
+                <viewController id="bMa-OS-5yt" customClass="TripSummaryVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0KK-aT-PkW"/>
+                        <viewControllerLayoutGuide type="bottom" id="oxM-ld-eGT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nf0-PA-aRu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="30" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="k8g-xY-HBc">
+                                <rect key="frame" x="0.0" y="-44" width="320" height="524"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="bMa-OS-5yt" id="2cc-3Z-IhO"/>
+                                    <outlet property="delegate" destination="bMa-OS-5yt" id="T8d-S4-eaz"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Trip Summary not found..!!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSQ-WF-rIa">
+                                <rect key="frame" x="5" y="151" width="310" height="21"/>
+                                <fontDescription key="fontDescription" name="GothamRounded-Light" family="Gotham Rounded" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sos-Li-kBf">
+                                <rect key="frame" x="114" y="189" width="92" height="30"/>
+                                <fontDescription key="fontDescription" name="GothamRounded-Light" family="Gotham Rounded" pointSize="18"/>
+                                <state key="normal" title="Sync Now">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="syncAction:" destination="Gas-XL-XwI" eventType="touchUpInside" id="VYT-lE-ij9"/>
+                                    <action selector="syncAction:" destination="bMa-OS-5yt" eventType="touchUpInside" id="cAc-wx-jjL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="k8g-xY-HBc" secondAttribute="trailing" id="3VN-Zu-m8Y"/>
+                            <constraint firstItem="k8g-xY-HBc" firstAttribute="top" secondItem="0KK-aT-PkW" secondAttribute="bottom" constant="-44" id="8rC-Wn-GMj"/>
+                            <constraint firstItem="oxM-ld-eGT" firstAttribute="top" secondItem="k8g-xY-HBc" secondAttribute="bottom" id="bQi-7C-zrJ"/>
+                            <constraint firstItem="k8g-xY-HBc" firstAttribute="leading" secondItem="Nf0-PA-aRu" secondAttribute="leading" id="vDa-2c-fIc"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem image="burger.png" id="zGj-Wi-I0b">
+                            <connections>
+                                <action selector="menuButtonAction:" destination="bMa-OS-5yt" id="nMi-UB-BGM"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem image="checkIcon03.png" id="i2e-EN-Z71">
+                            <connections>
+                                <action selector="checkButtonAction:" destination="bMa-OS-5yt" id="6Re-Q9-bfO"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="UK8-H9-dJ4">
+                        <nil key="title"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="S43-I8-lHN"/>
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" id="hqQ-dh-V1T">
+                            <rect key="frame" x="96" y="7" width="128" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" name="GothamRounded-Light" family="Gotham Rounded" pointSize="20"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="bMa-OS-5yt" id="fUO-jt-NoA"/>
+                            </connections>
+                        </textField>
+                    </navigationItem>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="btnCheck" destination="i2e-EN-Z71" id="YKM-AB-yx4"/>
+                        <outlet property="btnMenu" destination="zGj-Wi-I0b" id="uSl-dY-i6K"/>
+                        <outlet property="btnSync" destination="Sos-Li-kBf" id="q4K-Ej-E1t"/>
+                        <outlet property="lblMessage" destination="SSQ-WF-rIa" id="bIZ-Rj-gjv"/>
+                        <outlet property="tableViewSummary" destination="k8g-xY-HBc" id="qW1-SF-Xhp"/>
+                        <outlet property="txtSummaryTitle" destination="hqQ-dh-V1T" id="qtS-HE-tUg"/>
+                        <segue destination="C8M-2p-665" kind="push" identifier="summaryDetailIdentifier" id="ZX5-ZA-B15"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bSY-KF-YsJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1438" y="635"/>
+        </scene>
+        <!--Summary Detail-->
+        <scene sceneID="21k-JD-35M">
+            <objects>
+                <viewController id="C8M-2p-665" customClass="TripSummaryDetailVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GAq-ni-CP4"/>
+                        <viewControllerLayoutGuide type="bottom" id="stm-XY-cum"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yOe-cg-x9N">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No transactions yet..!!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SzM-UD-xjw">
+                                <rect key="frame" x="5" y="167" width="310" height="18"/>
+                                <fontDescription key="fontDescription" name="GothamRounded-Light" family="Gotham Rounded" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ycy-4b-eOF">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="C8M-2p-665" id="kVx-8l-Jm1"/>
+                                    <outlet property="delegate" destination="C8M-2p-665" id="ovL-TP-Tsz"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ycy-4b-eOF" firstAttribute="top" secondItem="GAq-ni-CP4" secondAttribute="bottom" id="4SU-rh-RnM"/>
+                            <constraint firstItem="Ycy-4b-eOF" firstAttribute="leading" secondItem="yOe-cg-x9N" secondAttribute="leading" id="6f9-4L-zyx"/>
+                            <constraint firstItem="SzM-UD-xjw" firstAttribute="leading" secondItem="yOe-cg-x9N" secondAttribute="leadingMargin" constant="-11" id="L7f-mS-XME"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SzM-UD-xjw" secondAttribute="trailing" constant="-11" id="TTu-JX-k0Y"/>
+                            <constraint firstAttribute="trailing" secondItem="Ycy-4b-eOF" secondAttribute="trailing" id="YJQ-WA-Ius"/>
+                            <constraint firstItem="stm-XY-cum" firstAttribute="top" secondItem="Ycy-4b-eOF" secondAttribute="bottom" constant="5" id="fck-EP-L2e"/>
+                            <constraint firstItem="SzM-UD-xjw" firstAttribute="top" secondItem="GAq-ni-CP4" secondAttribute="bottom" constant="167" id="plZ-OW-mHu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Summary Detail" id="Nam-wS-z8F"/>
+                    <connections>
+                        <outlet property="lblMessage" destination="SzM-UD-xjw" id="YMN-24-kqb"/>
+                        <outlet property="tableViewDetails" destination="Ycy-4b-eOF" id="xf3-1L-mOz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E5A-A5-Z1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1872" y="630"/>
+        </scene>
+        <!--Add New Trip-->
+        <scene sceneID="0t2-UE-rJM">
+            <objects>
+                <viewController storyboardIdentifier="AddTripVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rjt-7c-f4b" customClass="AddTripVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hEX-Oa-emG"/>
+                        <viewControllerLayoutGuide type="bottom" id="AxP-tL-UN8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dsm-fL-JRO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Trip Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mKw-4B-Pr7">
+                                <rect key="frame" x="16" y="57" width="288" height="30"/>
+                                <fontDescription key="fontDescription" name="GothamRounded-Light" family="Gotham Rounded" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Rjt-7c-f4b" id="QUG-Hw-VOT"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qfg-CL-fiM">
+                                <rect key="frame" x="16" y="95" width="240" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="kbz-gK-YiR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GothamRounded-Light" family="Gotham Rounded" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Rjt-7c-f4b" id="10H-wa-awg"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nm-A5-8ba">
+                                <rect key="frame" x="8" y="512" width="305" height="50"/>
+                                <color key="backgroundColor" red="0.90196078430000004" green="0.4039215686" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="sHV-tF-cHN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GothamRounded-Light" family="Gotham Rounded" pointSize="16"/>
+                                <state key="normal" title="Create Trip">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createTripAction:" destination="Rjt-7c-f4b" eventType="touchUpInside" id="xdt-Ny-ULO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZL-II-6pa">
+                                <rect key="frame" x="266" y="93" width="44" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="XUP-Vg-Puo"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="2"/>
+                                <state key="normal" image="add_multi_email.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="SDY-18-MSL" kind="push" identifier="addressBookIdentifier" id="EqD-f1-kZD"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="tID-BS-fkd">
+                                <rect key="frame" x="11" y="133" width="299" height="371"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Rjt-7c-f4b" id="v7v-w2-PZQ"/>
+                                    <outlet property="delegate" destination="Rjt-7c-f4b" id="dxb-0B-aiu"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0nm-A5-8ba" firstAttribute="leading" secondItem="dsm-fL-JRO" secondAttribute="leadingMargin" constant="-8" id="2TK-H5-Agw"/>
+                            <constraint firstItem="tID-BS-fkd" firstAttribute="leading" secondItem="dsm-fL-JRO" secondAttribute="leadingMargin" constant="-5" id="30n-aN-FGM"/>
+                            <constraint firstItem="qfg-CL-fiM" firstAttribute="leading" secondItem="dsm-fL-JRO" secondAttribute="leadingMargin" id="9n9-aA-HKG"/>
+                            <constraint firstItem="ZZL-II-6pa" firstAttribute="leading" secondItem="qfg-CL-fiM" secondAttribute="trailing" constant="10" id="Iq5-xc-fMg"/>
+                            <constraint firstItem="AxP-tL-UN8" firstAttribute="top" secondItem="0nm-A5-8ba" secondAttribute="bottom" constant="6" id="MqS-Oi-KtE"/>
+                            <constraint firstItem="tID-BS-fkd" firstAttribute="top" secondItem="ZZL-II-6pa" secondAttribute="bottom" constant="7" id="PKS-ea-Blb"/>
+                            <constraint firstItem="ZZL-II-6pa" firstAttribute="trailing" secondItem="tID-BS-fkd" secondAttribute="trailing" id="QUa-cd-Cyd"/>
+                            <constraint firstItem="mKw-4B-Pr7" firstAttribute="trailing" secondItem="dsm-fL-JRO" secondAttribute="trailingMargin" id="R1C-UK-Ocj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0nm-A5-8ba" secondAttribute="trailing" constant="-9" id="aGl-6r-azL"/>
+                            <constraint firstItem="ZZL-II-6pa" firstAttribute="top" secondItem="mKw-4B-Pr7" secondAttribute="bottom" constant="6" id="d5O-G7-HpD"/>
+                            <constraint firstItem="mKw-4B-Pr7" firstAttribute="leading" secondItem="dsm-fL-JRO" secondAttribute="leadingMargin" id="eKt-4Z-fp1"/>
+                            <constraint firstItem="mKw-4B-Pr7" firstAttribute="top" secondItem="hEX-Oa-emG" secondAttribute="bottom" constant="13" id="gbB-Ft-gPE"/>
+                            <constraint firstItem="0nm-A5-8ba" firstAttribute="top" secondItem="tID-BS-fkd" secondAttribute="bottom" constant="8" id="qSv-GW-QnD"/>
+                            <constraint firstItem="qfg-CL-fiM" firstAttribute="top" secondItem="mKw-4B-Pr7" secondAttribute="bottom" constant="8" id="yPM-Jr-IR3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tID-BS-fkd" secondAttribute="trailing" constant="-6" id="zQ0-ZX-A8f"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add New Trip" id="lmL-jz-5gk">
+                        <barButtonItem key="backBarButtonItem" title=" " id="EZA-wQ-iKf"/>
+                    </navigationItem>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="btnSaveEditTrip" destination="0nm-A5-8ba" id="yCV-2J-A0q"/>
+                        <outlet property="btnSelectUser" destination="ZZL-II-6pa" id="jrB-rt-HlY"/>
+                        <outlet property="tableViewPerson" destination="tID-BS-fkd" id="gv6-uq-BnZ"/>
+                        <outlet property="txtEmail" destination="qfg-CL-fiM" id="Ox0-Ti-Vzh"/>
+                        <outlet property="txtTripName" destination="mKw-4B-Pr7" id="XkA-xT-Xew"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MPs-Nz-mhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1872" y="-76"/>
+        </scene>
+        <!--AddressBook-->
+        <scene sceneID="SIC-bM-bBR">
+            <objects>
+                <tableViewController id="SDY-18-MSL" customClass="AddressBookVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5dB-uA-Vql">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6WG-DD-9OI">
+                            <rect key="frame" x="0.0" y="-21" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <connections>
+                            <outlet property="dataSource" destination="SDY-18-MSL" id="M4t-wv-OUZ"/>
+                            <outlet property="delegate" destination="SDY-18-MSL" id="2Yj-aO-g0X"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="AddressBook" id="96g-K4-nuT">
+                        <barButtonItem key="rightBarButtonItem" image="checkIcon01.png" style="plain" id="WvC-RM-gYk">
+                            <connections>
+                                <action selector="doneAction:" destination="SDY-18-MSL" id="6XO-vx-qxX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Pg-pY-QJo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2343" y="-76"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Kyp-px-Dju">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pq0-V7-eua" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <toolbarItems/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="6a2-TK-XnM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Gas-XL-XwI" kind="relationship" relationship="rootViewController" id="ILg-zf-f2J"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QgL-Xo-lZX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1007" y="-76"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="add_multi_email.png" width="32" height="32"/>
+        <image name="burger.png" width="19" height="17"/>
+        <image name="checkIcon01.png" width="32" height="32"/>
+        <image name="checkIcon03.png" width="32" height="32"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
