@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8D6A5956-652A-4889-8BE3-AA96ACBA59E4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Giddh</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FDC449386EC1A4CA411C7FB1EF548E474C8FF48D</key>
+		<string>walk.git.beanstalkapp.com:/walk/giddh-iphone.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Giddh.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FDC449386EC1A4CA411C7FB1EF548E474C8FF48D</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>walk.git.beanstalkapp.com:/walk/giddh-iphone.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FDC449386EC1A4CA411C7FB1EF548E474C8FF48D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FDC449386EC1A4CA411C7FB1EF548E474C8FF48D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Giddh%20</string>
+		</dict>
+	</array>
+</dict>
+</plist>

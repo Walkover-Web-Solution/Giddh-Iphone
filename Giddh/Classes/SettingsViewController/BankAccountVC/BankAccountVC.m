@@ -17,7 +17,6 @@
 {
     NSArray *arrEntries;
     NSMutableArray *arrAccounts;
-
 }
 @end
 
